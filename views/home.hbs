@@ -1,0 +1,116 @@
+<img src="/lib/load.gif" alt="" id="loading" class="hidden">
+<div class='main-wrap'>
+  <div class="d-flex">
+    <div class="d-flex">
+      <input type="date" id="stock-start" name="start" class="mx-3">
+      <input type="date" id="stock-end" name="end" class="mx-3">
+    </div>
+    <button type="button" class="btn btn-primary trader-rank-btn">
+      Trader Rank
+    </button>
+  </div>
+
+  <div class='mt-4'>
+    <div class='d-flex'>
+      <input
+        type='text'
+        class='form-control mx-3'
+        id='input-stock'
+        placeholder='輸入股票'
+        autocomplete="off"
+      />
+      <div class="d-flex">
+        <input type="date" id="stock-start" name="start" class="mx-3">
+        <input type="date" id="stock-end" name="end" class="mx-3">
+      </div>
+      <button type='submit' class='btn btn-primary stock-btn' style="width: 200px;">送出</button>
+    </div>
+  </div>
+
+  <div class='d-flex mt-4' >
+    <div class='d-flex w-100'>
+      <input
+        type='text'
+        class='form-control mx-3'
+        id='input-trader'
+        placeholder='輸入券商'
+        autocomplete="off"
+      />
+      <div class="d-flex">
+        <input type="date" id="trade-start" name="start" class="mx-3">
+        <input type="date" id="trade-end" name="end" class="mx-3">
+      </div>
+      <button class='btn btn-primary trader-btn' style="width: 200px;">送出</button>
+    </div>
+    
+  </div>
+
+  <div>
+    <div id='container' style='width: 1000px; height: 400px;'></div>
+  </div>
+
+  <!-- Rank Modal -->
+  <div class="modal fade" id="traderRankModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">總券商買超排名</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table trader-buy-rank-table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">券商名稱</th>
+                <th scope="col">總交易量</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{!-- Trader Buy Modal --}}
+  <div class="modal fade" id="chip-buy-by-trader-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">個別券商買超排名</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table chip-buy-by-trader-table">
+            <thead>
+              <tr>
+                <th scope="col">券商名稱</th>
+                <th scope="col">公司名稱</th>
+                <th scope="col">總交易量</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{! Scripts }}
+<script
+  src='https://cdn.anychart.com/releases/8.11.0/js/anychart-base.min.js'
+  type='text/javascript'
+></script>
+<script src='/js/chart.js'></script>

@@ -1,0 +1,26 @@
+.hidden {
+  display: none;
+}
+
+#loading {
+  position: absolute;
+  top: calc(50% - 300px);
+  left: calc(50% - 400px);
+  
+  z-index: 3;
+}
+
+.main-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rank-trader-code {
+  cursor: pointer;
+}
+
+.rank-trader-code:hover {
+  background-color: rgba(163, 184, 200, 0.5);
+}
