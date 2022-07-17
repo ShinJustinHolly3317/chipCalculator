@@ -31,7 +31,12 @@ async function main() {
     console.log('missingStock', missingStock)
   }
   console.log(stockList)
+  // await Promise.all(stockList.map((stockId) => {
+  //   console.log('Company:', stockId)
+  //   return chipScrape(stockId[0], stockId[1])
+  // }))
 
+  console.log('missingStock', missingStock)
   process.exit()
 }
 
@@ -84,6 +89,7 @@ async function chipScrape(stockId, stockCode) {
     console.log('This round', chipData.length)
     await insertChip(chipData, stockCode)
   } catch (error) {
+    missingStock.push([stockCode])
     console.log(error.message)
   }
 }
