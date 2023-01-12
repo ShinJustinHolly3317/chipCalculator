@@ -9,7 +9,7 @@ const dbNameConfig = {
 
 const db = mysql.createPool({
   connectionLimit: 10,
-  host: 'localhost',
+  host: dbNameConfig.production || 'localhost',
   port: 3306,
   user: 'appworks-student',
   password: 'Appworks456.',
